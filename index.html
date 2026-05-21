@@ -3,104 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goodbye Office, Hello Freedom! 🎉</title>
+    <title>🎉 범덕 탈핑아이 축하회 (Dobby is Free)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti for Celebration Effects -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
-        body { font-family: 'Pretendard', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #0b0f19;
+            overflow-x: hidden;
+        }
+
+        /* 커스텀 스크롤바 디자인 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+
+        /* 그라데이션 애니메이션 효과 */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 6s ease infinite;
+        }
+
+        /* 둥실둥실 떠오르는 플로팅 에니메이션 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen justify-between">
+<body class="text-slate-100 min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
 
-    <!-- 상단 히어로 섹션 -->
-    <header class="text-center py-16 px-4 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg animate-fade-in">
-        <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">De-linking from Company</span>
-        <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-2 tracking-tight">
-            ✨ 서범덕 퇴사 축하 연회 ✨
-        </h1>
-        <p class="text-lg md:text-xl opacity-90 font-light">
-            노비 문서 불태우는 날, 그 영광스러운 자리에 초대합니다.
-        </p>
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-950/75 border-b border-slate-800/80 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl">🕊️</span>
+                <span class="font-extrabold tracking-wider bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">DOBBY IS FREE</span>
+            </div>
+            <span class="text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full">
+                공식 초청장
+            </span>
+        </div>
     </header>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="max-w-md mx-auto w-full px-6 py-12 flex-grow space-y-8">
-        
-        <!-- 디데이 카운트다운 -->
-        <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
-            <h3 class="text-sm font-semibold text-slate-400 mb-3 uppercase tracking-wider">자유의 몸이 되기까지</h3>
-            <div class="flex justify-center space-x-4 text-slate-700">
-                <div>
-                    <span id="days" class="text-3xl font-extrabold text-indigo-600">00</span>
-                    <span class="text-xs block text-slate-400 mt-1">Days</span>
+    <main class="max-w-6xl mx-auto w-full px-4 py-8 lg:py-12 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- LEFT COLUMN: 메인 인트로 및 디데이 카운터 (PC에서는 Sticky 작동) -->
+            <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+                
+                <!-- 메인 히어로 카드 -->
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900/60 via-purple-900/40 to-slate-900/80 p-8 border border-slate-800 shadow-2xl animate-float">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
+                    
+                    <span class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 shadow-sm animate-pulse">
+                        THE GREAT ESCAPE
+                    </span>
+                    <h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
+                        <span class="block text-slate-300 text-xl font-normal mb-1">축! 무사 탈출!</span>
+                        <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">서범덕</span> 연구원의<br>
+                        빛나는 퇴사 축하연 🎉
+                    </h1>
+                    
+                    <div class="mt-6 space-y-2 border-t border-slate-800/80 pt-6 text-sm text-slate-300">
+                        <div class="flex items-center justify-between">
+                            <span class="flex items-center text-slate-400"><i data-lucide="sparkles" class="w-4 h-4 mr-2 text-indigo-400"></i>공식 자유인 등록일</span>
+                            <span class="font-bold text-white bg-slate-800 px-2.5 py-1 rounded-md">6월 15일 (월)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="flex items-center text-slate-400"><i data-lucide="beer" class="w-4 h-4 mr-2 text-pink-400"></i>우리끼리 축하 파티</span>
+                            <span class="font-bold text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-md border border-pink-500/20">6월 12일 (금) 저녁 7시</span>
+                        </div>
+                    </div>
                 </div>
-                <span class="text-2xl font-light text-slate-300">:</span>
-                <div>
-                    <span id="hours" class="text-3xl font-extrabold text-indigo-600">00</span>
-                    <span class="text-xs block text-slate-400 mt-1">Hours</span>
+
+                <!-- 실시간 탈출 카운트다운 시계 -->
+                <div class="bg-slate-900/80 border border-slate-800/80 rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-1.5">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        </span>
+                        범덕님 공식 자유인(6/15)까지 남은 시간
+                    </h3>
+                    <div class="grid grid-cols-4 gap-2 text-slate-100">
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800/50">
+                            <span id="days" class="text-2xl md:text-3xl font-extrabold text-white">00</span>
+                            <span class="text-[10px] block text-slate-500 mt-1 uppercase font-medium">Days</span>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800/50">
+                            <span id="hours" class="text-2xl md:text-3xl font-extrabold text-white">00</span>
+                            <span class="text-[10px] block text-slate-500 mt-1 uppercase font-medium">Hours</span>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800/50">
+                            <span id="minutes" class="text-2xl md:text-3xl font-extrabold text-white">00</span>
+                            <span class="text-[10px] block text-slate-500 mt-1 uppercase font-medium">Mins</span>
+                        </div>
+                        <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800/50">
+                            <span id="seconds" class="text-2xl md:text-3xl font-extrabold text-pink-400">00</span>
+                            <span class="text-[10px] block text-slate-500 mt-1 uppercase font-medium">Secs</span>
+                        </div>
+                    </div>
                 </div>
-                <span class="text-2xl font-light text-slate-300">:</span>
-                <div>
-                    <span id="minutes" class="text-3xl font-extrabold text-indigo-600">00</span>
-                    <span class="text-xs block text-slate-400 mt-1">Mins</span>
-                </div>
-                <span class="text-2xl font-light text-slate-300">:</span>
-                <div>
-                    <span id="seconds" class="text-3xl font-extrabold text-indigo-600">00</span>
-                    <span class="text-xs block text-slate-400 mt-1">Secs</span>
-                </div>
+
             </div>
-        </section>
 
-        <!-- 초대장 본문 -->
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4">
-            <div class="text-2xl">✉️</div>
-            <h2 class="text-xl font-bold text-slate-900">도비는 이제 자유에요!</h2>
-            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
-                그동안 사령원의 무리한 요구와 끊이지 않는 업무의 파도 속에서 살아남느라 고생 많으셨습니다.<br><br>
-                <strong>2026년 6월 12일</strong>, 드디어 사회로 복귀하는 서범덕을 축하하고, 앞날의 무궁한 백수 생활(또는 이직)을 응원하기 위해 작은 저녁 식사 자리를 마련했습니다. 참석하셔서 자리를 빛내주세요!
-            </p>
-        </section>
+            <div class="lg:col-span-7 space-y-6">
+                
+                <!-- 초대 편지 섹션 -->
+                <section class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-6 shadow-xl">
+                    <div class="flex items-center space-x-3 text-2xl">
+                        <span>✉️</span>
+                        <h2 class="text-xl font-extrabold text-white">도비는 이제 자유에요!</h2>
+                    </div>
+                    <div class="space-y-4 text-slate-300 leading-relaxed text-sm md:text-base">
+                        <p>
+                            사령원의 끊임없는 격무 요구와 몰아치는 업무 파도 속에서 살아남아 드디어 영광스러운 <strong class="text-white">자유인 선언</strong>을 쟁취하신 범덕! 🎉
+                        </p>
+                        <p>
+                            범덕님의 눈물겨운 탈출 성공기(<strong class="text-indigo-300">공식 퇴사일: 6월 15일 월요일</strong>)를 함께 뜨겁게 포옹하며 기념하고, 앞날의 환상적인 꽃길을 응원하고자 먼저 <strong class="text-pink-300">6월 12일 금요일 저녁</strong>에 뭉칩니다.
+                        </p>
+                        <p class="bg-slate-950/50 p-4 rounded-xl border border-slate-800 text-xs md:text-sm text-slate-400">
+                            💡 평일의 찌든 회사원 얼굴은 벗어던지고 가장 편안한 백수 모드의 표정과 복장으로 참석해 주시기 바랍니다.
+                        </p>
+                    </div>
+                </section>
 
-        <!-- 세부 정보 -->
-        <section class="bg-slate-900 text-white p-6 rounded-2xl shadow-lg space-y-4">
-            <h3 class="text-lg font-bold flex items-center border-b border-slate-800 pb-2">
-                📍 연회 상세 정보
-            </h3>
-            <div class="space-y-3 text-sm opacity-90">
-                <div class="flex justify-between">
-                    <span class="font-medium text-slate-400">일시</span>
-                    <span class="text-right">2026년 6월 12일 (금) 저녁 7시</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="font-medium text-slate-400">장소</span>
-                    <span class="text-right">[예: 홍대 OO 고깃집 또는 우리집]</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="font-medium text-slate-400">드레스코드</span>
-                    <span class="text-right">가장 편안하고 출근 안 할 것 같은 복장</span>
-                </div>
+                <!-- 참석 여부 피하기 미션 카드 (핵심 기능) -->
+                <section id="rsvp-section" class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-6 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">⚡</span>
+                            <h2 class="text-xl font-extrabold text-white">참석 여부 알려주기</h2>
+                        </div>
+                        <span class="text-xs text-rose-400 bg-rose-500/15 border border-rose-500/20 px-2 py-0.5 rounded-md font-semibold">
+                            ⚠️ 불참선택 불가주의
+                        </span>
+                    </div>
+
+                    <p class="text-slate-300 text-sm md:text-base">
+                        범덕님 퇴사의 영광을 한 테이블에서 직접 나눌 준비가 되셨습니까? <br class="hidden md:inline">
+                        신중하게 선택해 주세요. (불가능은 처음부터 존재하지 않았습니다.)
+                    </p>
+
+                    <!-- 버튼들이 배치되는 상대 경계 영역 -->
+                    <div id="rsvp-container" class="relative w-full h-56 bg-slate-950/80 rounded-2xl border border-slate-800 flex items-center justify-center overflow-hidden">
+                        
+                        <!-- 가능 버튼 -->
+                        <button id="yes-button" class="z-10 transform hover:scale-105 active:scale-95 transition-all px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-black rounded-xl shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 text-base md:text-lg flex items-center gap-2">
+                            <span>가능! 무조건 갑니다 🥳</span>
+                        </button>
+
+                        <!-- 도망치는 불가능 버튼 -->
+                        <button id="no-button" class="z-20 px-6 py-3.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-500/20 transition-all duration-200 ease-out absolute select-none text-sm md:text-base pointer-events-auto" style="left: calc(50% + 120px); top: 50%; transform: translate(-50%, -50%);">
+                            불가능.. 바빠서요 😢
+                        </button>
+
+                        <!-- 이리저리 도망갈 때 나타나는 풍선껌 위트 메시지 타겟 -->
+                        <div id="escape-bubble" class="absolute pointer-events-none opacity-0 bg-yellow-400 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg transition-opacity duration-300 z-30">
+                            응 안돼~
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-6 shadow-xl">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">📍</span>
+                        <h2 class="text-xl font-extrabold text-white">모임 상세 정보</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 space-y-1">
+                            <span class="text-xs text-indigo-400 font-bold block uppercase tracking-wide">언제 만나나요?</span>
+                            <span class="text-sm md:text-base font-extrabold text-white block">2026년 6월 12일 (금요일)</span>
+                            <span class="text-xs text-slate-400 block">오후 7시 정각 정모 시작</span>
+                        </div>
+                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 space-y-1">
+                            <span class="text-xs text-pink-400 font-bold block uppercase tracking-wide">어디서 만나나요?</span>
+                            <span class="text-sm md:text-base font-extrabold text-white block" id="place-name">음식점 (문래역 어딘가 예정)</span>
+                            <span class="text-xs text-slate-400 block">서울 구로구 문래동 일대 맛집</span>
+                        </div>
+                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 space-y-1">
+                            <span class="text-xs text-amber-400 font-bold block uppercase tracking-wide">스페셜 룰 (회비)</span>
+                            <span class="text-xs text-slate-400 block">엔분의 일 적용</span>
+                        </div>
+                        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 space-y-1">
+                            <span class="text-xs text-teal-400 font-bold block uppercase tracking-wide">준비물</span>
+                            <span class="text-xs text-slate-400 block">진심 가득한 박수와 응원의 마음</span>
+                        </div>
+                    </div>
+
+                    <!-- 지도 연동 버튼들 -->
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <a href="https://map.kakao.com" target="_blank" class="flex items-center justify-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-semibold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md">
+                            <span>💛 카카오맵 바로가기</span>
+                        </a>
+                        <a href="https://map.naver.com" target="_blank" class="flex items-center justify-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md">
+                            <span>💚 네이버지도 바로가기</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-6 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">💬</span>
+                            <h2 class="text-xl font-extrabold text-white">범덕님께 롤링 페이퍼</h2>
+                        </div>
+                        <span class="text-xs text-slate-400">한마디씩 채워주세요!</span>
+                    </div>
+
+                    <!-- 방명록 입력 폼 -->
+                    <form id="comment-form" class="space-y-3">
+                        <div class="grid grid-cols-3 gap-2">
+                            <input type="text" id="guest-name" placeholder="작성자 이름" required class="col-span-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 transition-colors">
+                            <input type="text" id="guest-message" placeholder="범덕님에게 보낼 축하 메시지 입력!" required class="col-span-2 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500 transition-colors">
+                        </div>
+                        <button type="submit" class="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold py-3 rounded-xl text-sm transition-all flex items-center justify-center space-x-1.5 active:scale-[0.99]">
+                            <span>축하 메시지 달기</span>
+                        </button>
+                    </form>
+
+                    <!-- 축하 메시지 목록 출력부 -->
+                    <div id="comment-list" class="space-y-3 max-h-60 overflow-y-auto pr-1">
+                        <!-- 디폴트 예시 메시지 -->
+                        <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/60 text-xs md:text-sm space-y-1">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-indigo-400">김동료 주임</span>
+                                <span class="text-[10px] text-slate-500">방금 전</span>
+                            </div>
+                            <p class="text-slate-300">범덕 연구원님! 그동안 너무너무 든든했고 수고 많으셨어요! 자유 세계에서 행복하세요 ㅠㅠ</p>
+                        </div>
+                        <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/60 text-xs md:text-sm space-y-1">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-pink-400">김사원님</span>
+                                <span class="text-[10px] text-slate-500">5분 전</span>
+                            </div>
+                            <p class="text-slate-300">도비는 정말 자유군요.. 그 장작 타는 자리에 저도 껴서 기 좀 받아가겠습니다!</p>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-        </section>
-
-        <!-- 하단 버튼 (카카오톡 링크 등으로 활용 가능) -->
-        <div class="text-center pt-4">
-            <a href="https://map.kakao.com" target="_blank" class="inline-block w-full bg-slate-800 hover:bg-slate-700 text-white text-center py-4 rounded-xl font-semibold transition shadow-md">
-                🗺️ 구글맵/네이버지도에서 장소 보기
-            </a>
         </div>
     </main>
 
-    <!-- 푸터 -->
-    <footer class="text-center py-6 text-xs text-slate-400 border-t border-slate-200 bg-white">
-        © 2026 [내 이름 또는 모임 이름]. Powered by Freedom.
+    <!-- 1) 대성공 축하 모달 -->
+    <div id="celebrate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-slate-900 border border-indigo-500/30 rounded-3xl p-6 md:p-8 max-w-sm w-full text-center space-y-6 shadow-2xl shadow-indigo-500/10">
+            <div class="text-5xl animate-bounce">🕊️✨</div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-white">참석 접수 전격 완료!</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    역시 범덕님의 최측근다우십니다! <br>
+                    <strong class="text-pink-400">6월 12일 금요일 저녁 7시</strong>,<br> 아주 불타는 저녁 식사를 같이 즐겨봅시다!
+                </p>
+            </div>
+            <button id="close-celebrate-btn" class="w-full py-3 bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-extrabold rounded-xl transition-all shadow-md active:scale-95">
+                확인 및 팡파르 한 번 더! 🎉
+            </button>
+        </div>
+    </div>
+
+    <!-- 2) 꼼수 방지 모달 (혹시 탭키 등으로 불가능 버튼 누르는 기인들을 위해) -->
+    <div id="cheat-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-slate-900 border border-rose-500/30 rounded-3xl p-6 md:p-8 max-w-sm w-full text-center space-y-6 shadow-2xl">
+            <div class="text-5xl">🤨🚨</div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-rose-400">어허! 치트키 적발!</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    시스템의 헛점을 파고들어 불참을 선언하려 하시다니요! 범덕 주임님의 노비 탈출 연회에 불참은 엄격히 금지되어 있습니다. 
+                </p>
+            </div>
+            <button id="close-cheat-btn" class="w-full py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl transition-all shadow-md active:scale-95">
+                죄송합니다 참석하겠습니다 😂
+            </button>
+        </div>
+    </div>
+
+    <footer class="border-t border-slate-900 bg-slate-950/60 py-8 px-6 text-center text-xs text-slate-500 space-y-2">
+        <p>© 2026 Beomdeok's Great Escape Team. All rights reserved.</p>
+        <p class="text-[10px] text-slate-600">이 페이지는 서범덕 주임의 퇴사를 기념하기 위해 헌정된 축하 초대장입니다.</p>
     </footer>
 
-    <!-- 카운트다운 스크립트 -->
     <script>
-        // 퇴사일 설정 (2026년 6월 12일 18시 기준)
-        const targetDate = new Date("2026-06-12T18:00:00").getTime();
+        // Lucide SVG 아이콘 빌드용 초기화
+        lucide.createIcons();
+
+        // -------------------------------------------------------------
+        // [1] 날짜 및 카운트다운 타이머 로직
+        // -------------------------------------------------------------
+        // 퇴사일: 2026년 6월 15일 18시
+        const targetDate = new Date("2026-06-15T18:00:00").getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -119,14 +337,269 @@
             const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+            document.getElementById("days").innerText = String(d).padStart(2, '0');
+            document.getElementById("hours").innerText = String(h).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(s).padStart(2, '0');
         };
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        // -------------------------------------------------------------
+        // [2] Web Audio API를 활용한 맞춤형 축하 팡파르 연주기
+        // -------------------------------------------------------------
+        function playFanfare() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                
+                const ctx = new AudioContext();
+                const now = ctx.currentTime;
+                
+                // 음표 정의 [주파수, 지속시간]
+                const notes = [
+                    [261.63, 0.15], // 도 (C4)
+                    [329.63, 0.15], // 미 (E4)
+                    [392.00, 0.15], // 솔 (G4)
+                    [523.25, 0.3],  // 도 (C5)
+                    [392.00, 0.15], // 솔 (G4)
+                    [523.25, 0.6]   // 도 (C5, 강조)
+                ];
+
+                let timeOffset = 0;
+                notes.forEach(([frequency, duration]) => {
+                    const osc = ctx.createOscillator();
+                    const gainNode = ctx.createGain();
+
+                    osc.type = 'triangle'; // 부드러운 아날로그 신스 느낌
+                    osc.frequency.setValueAtTime(frequency, now + timeOffset);
+
+                    gainNode.gain.setValueAtTime(0.2, now + timeOffset);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, now + timeOffset + duration);
+
+                    osc.connect(gainNode);
+                    gainNode.connect(ctx.destination);
+
+                    osc.start(now + timeOffset);
+                    osc.stop(now + timeOffset + duration);
+
+                    timeOffset += duration - 0.05;
+                });
+            } catch (e) {
+                console.warn('AudioContext is blocked by browser policy or unsupported:', e);
+            }
+        }
+
+        // 도망갈 때 내는 귀여운 거절 효과음
+        function playRejectBeep() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(150, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(70, ctx.currentTime + 0.15);
+                
+                gain.gain.setValueAtTime(0.15, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+                
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.start();
+                osc.stop(ctx.currentTime + 0.15);
+            } catch (e) {}
+        }
+
+        // -------------------------------------------------------------
+        // [3] '불가능' 버튼 요리조리 도망가는 인터랙션 구현
+        // -------------------------------------------------------------
+        const container = document.getElementById('rsvp-container');
+        const noBtn = document.getElementById('no-button');
+        const bubble = document.getElementById('escape-bubble');
+        
+        const punchlines = [
+            "어딜 감히! 😂", 
+            "안돼요~ 😜", 
+            "불참은 없다! 🙅‍♂️", 
+            "누를 수 있으면 눌러봐! 🤪", 
+            "탈출은 범덕만 가능! 🏃‍♂️", 
+            "마포껍데기가 웁니다 🥩",
+            "동료애 어디 갔죠? 👀"
+        ];
+
+        let escapeCount = 0;
+
+        function moveButton(e) {
+            // 버튼 자체의 크기 구하기
+            const btnWidth = noBtn.offsetWidth;
+            const btnHeight = noBtn.offsetHeight;
+            
+            // 컨테이너 크기 구하기
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+
+            // 안쪽 여백 확보
+            const padding = 16;
+            
+            // 랜덤 좌표 연산
+            const maxX = containerWidth - btnWidth - (padding * 2);
+            const maxY = containerHeight - btnHeight - (padding * 2);
+
+            const randomX = Math.floor(Math.random() * maxX) + padding;
+            const randomY = Math.floor(Math.random() * maxY) + padding;
+
+            // 절대값 좌표 적용 및 레이아웃 트래킹 해제
+            noBtn.style.transform = 'none';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+
+            // 효과음 재생
+            playRejectBeep();
+
+            // 도망 횟수 증가 및 말풍선 띄우기
+            escapeCount++;
+            const randomMsg = punchlines[Math.floor(Math.random() * punchlines.length)];
+            bubble.innerText = randomMsg;
+            bubble.style.opacity = '1';
+            
+            // 말풍선을 마우스 위치나 버튼 주변으로 이동
+            bubble.style.left = `${randomX}px`;
+            bubble.style.top = `${Math.max(10, randomY - 35)}px`;
+
+            // 일정 시간 후 말풍선 사라지게 만들기
+            setTimeout(() => {
+                if (bubble.innerText === randomMsg) {
+                    bubble.style.opacity = '0';
+                }
+            }, 1000);
+        }
+
+        // PC 마우스 접촉 감지
+        noBtn.addEventListener('mouseenter', moveButton);
+        // 모바일 터치 접촉 감지
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // 기본 터치 클릭 무효화
+            moveButton(e);
+        });
+
+        // 탭 인터랙션 등으로 끝내 불가능 버튼을 클릭했을 때의 예외 처리 (치트 방지)
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const cheatModal = document.getElementById('cheat-modal');
+            cheatModal.classList.remove('pointer-events-none', 'opacity-0');
+        });
+
+        document.getElementById('close-cheat-btn').addEventListener('click', () => {
+            const cheatModal = document.getElementById('cheat-modal');
+            cheatModal.classList.add('pointer-events-none', 'opacity-0');
+            // 참회한 기념으로 다시 불가능 버튼 도망다니게 리셋
+            noBtn.style.left = 'calc(50% + 120px)';
+            noBtn.style.top = '50%';
+            noBtn.style.transform = 'translate(-50%, -50%)';
+        });
+
+        // -------------------------------------------------------------
+        // [4] '가능' 버튼 수락 및 축하 모달 & 폭죽 효과 연출
+        // -------------------------------------------------------------
+        const yesBtn = document.getElementById('yes-button');
+        const celebrateModal = document.getElementById('celebrate-modal');
+
+        function triggerConfetti() {
+            // 중앙 폭죽
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+
+            // 좌측 폭죽
+            confetti({
+                particleCount: 80,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 }
+            });
+
+            // 우측 폭죽
+            confetti({
+                particleCount: 80,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 }
+            });
+        }
+
+        yesBtn.addEventListener('click', () => {
+            // 모달 열기
+            celebrateModal.classList.remove('pointer-events-none', 'opacity-0');
+            // 신나는 효과 및 팡파르 연주
+            triggerConfetti();
+            playFanfare();
+        });
+
+        document.getElementById('close-celebrate-btn').addEventListener('click', () => {
+            celebrateModal.classList.add('pointer-events-none', 'opacity-0');
+            triggerConfetti();
+            playFanfare();
+        });
+
+        // -------------------------------------------------------------
+        // [5] 롤링 페이퍼 한마디 쓰기 로컬 데이터 연동
+        // -------------------------------------------------------------
+        const commentForm = document.getElementById('comment-form');
+        const commentList = document.getElementById('comment-list');
+
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('guest-name');
+            const messageInput = document.getElementById('guest-message');
+
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (!name || !message) return;
+
+            // 방명록 뼈대 새로 생성
+            const wrapper = document.createElement('div');
+            wrapper.className = "bg-gradient-to-r from-indigo-950/40 to-slate-950/60 p-4 rounded-xl border border-indigo-500/20 text-xs md:text-sm space-y-1 transition-all transform scale-95 opacity-0 duration-300";
+            
+            wrapper.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-indigo-400 flex items-center gap-1">
+                        ${name} <span class="bg-indigo-500/20 text-[9px] px-1.5 py-0.2 rounded-full font-normal">참석 예정</span>
+                    </span>
+                    <span class="text-[10px] text-slate-500">방금 전</span>
+                </div>
+                <p class="text-slate-200 font-medium">${message}</p>
+            `;
+
+            // 리스트 최상단에 추가
+            commentList.insertBefore(wrapper, commentList.firstChild);
+
+            // 미끄러지며 들어오는 등장 모션
+            setTimeout(() => {
+                wrapper.classList.remove('scale-95', 'opacity-0');
+                wrapper.classList.add('scale-100', 'opacity-1');
+            }, 50);
+
+            // 입력 필드 리셋
+            nameInput.value = '';
+            messageInput.value = '';
+
+            // 깜짝 미니 폭죽 터트려주기
+            confetti({
+                particleCount: 30,
+                angle: 90,
+                spread: 40,
+                origin: { y: 0.8 }
+            });
+        });
     </script>
 </body>
 </html>
