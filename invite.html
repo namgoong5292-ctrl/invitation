@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodbye Office, Hello Freedom! 🎉</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen justify-between">
+
+    <!-- 상단 히어로 섹션 -->
+    <header class="text-center py-16 px-4 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg animate-fade-in">
+        <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">De-linking from Company</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-2 tracking-tight">
+            ✨ [친구 이름] 퇴사 축하 연회 ✨
+        </h1>
+        <p class="text-lg md:text-xl opacity-90 font-light">
+            노비 문서 불태우는 날, 그 영광스러운 자리에 초대합니다.
+        </p>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="max-w-md mx-auto w-full px-6 py-12 flex-grow space-y-8">
+        
+        <!-- 디데이 카운트다운 -->
+        <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+            <h3 class="text-sm font-semibold text-slate-400 mb-3 uppercase tracking-wider">자유의 몸이 되기까지</h3>
+            <div class="flex justify-center space-x-4 text-slate-700">
+                <div>
+                    <span id="days" class="text-3xl font-extrabold text-indigo-600">00</span>
+                    <span class="text-xs block text-slate-400 mt-1">Days</span>
+                </div>
+                <span class="text-2xl font-light text-slate-300">:</span>
+                <div>
+                    <span id="hours" class="text-3xl font-extrabold text-indigo-600">00</span>
+                    <span class="text-xs block text-slate-400 mt-1">Hours</span>
+                </div>
+                <span class="text-2xl font-light text-slate-300">:</span>
+                <div>
+                    <span id="minutes" class="text-3xl font-extrabold text-indigo-600">00</span>
+                    <span class="text-xs block text-slate-400 mt-1">Mins</span>
+                </div>
+                <span class="text-2xl font-light text-slate-300">:</span>
+                <div>
+                    <span id="seconds" class="text-3xl font-extrabold text-indigo-600">00</span>
+                    <span class="text-xs block text-slate-400 mt-1">Secs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 초대장 본문 -->
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+            <div class="text-2xl">✉️</div>
+            <h2 class="text-xl font-bold text-slate-900">도비는 이제 자유에요!</h2>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                그동안 사령원의 무리한 요구와 끊이지 않는 업무의 파도 속에서 살아남느라 고생 많으셨습니다.<br><br>
+                <strong>2026년 6월 12일</strong>, 드디어 사회로 복귀하는 [친구 이름]을(를) 축하하고, 앞날의 무궁한 백수 생활(또는 이직)을 응원하기 위해 작은 저녁 식사 자리를 마련했습니다. 참석하셔서 자리를 빛내주세요!
+            </p>
+        </section>
+
+        <!-- 세부 정보 -->
+        <section class="bg-slate-900 text-white p-6 rounded-2xl shadow-lg space-y-4">
+            <h3 class="text-lg font-bold flex items-center border-b border-slate-800 pb-2">
+                📍 연회 상세 정보
+            </h3>
+            <div class="space-y-3 text-sm opacity-90">
+                <div class="flex justify-between">
+                    <span class="font-medium text-slate-400">일시</span>
+                    <span class="text-right">2026년 6월 12일 (금) 저녁 7시</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-medium text-slate-400">장소</span>
+                    <span class="text-right">[예: 홍대 OO 고깃집 또는 우리집]</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-medium text-slate-400">드레스코드</span>
+                    <span class="text-right">가장 편안하고 출근 안 할 것 같은 복장</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-medium text-slate-400">회비</span>
+                    <span class="text-right text-amber-400 font-semibold">주인공은 지갑 두고 오세요 💳</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 버튼 (카카오톡 링크 등으로 활용 가능) -->
+        <div class="text-center pt-4">
+            <a href="https://map.kakao.com" target="_blank" class="inline-block w-full bg-slate-800 hover:bg-slate-700 text-white text-center py-4 rounded-xl font-semibold transition shadow-md">
+                🗺️ 구글맵/네이버지도에서 장소 보기
+            </a>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="text-center py-6 text-xs text-slate-400 border-t border-slate-200 bg-white">
+        © 2026 [내 이름 또는 모임 이름]. Powered by Freedom.
+    </footer>
+
+    <!-- 카운트다운 스크립트 -->
+    <script>
+        // 퇴사일 설정 (2026년 6월 12일 18시 기준)
+        const targetDate = new Date("2026-06-12T18:00:00").getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+        };
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
